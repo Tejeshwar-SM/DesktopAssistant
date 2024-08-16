@@ -14,7 +14,7 @@ def chat(query):
     global chatStr
     print(chatStr)
     openai.api_key = apikey
-    chatStr += f"Harry: {query}\n Jarvis: "
+    chatStr += f"Tejeshwar: {query}\n Balki: "
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt= chatStr,
@@ -67,11 +67,11 @@ def takeCommand():
             print(f"User said: {query}")
             return query
         except Exception as e:
-            return "Some Error Occurred. Sorry from Jarvis"
+            return "Some Error Occurred. Balki is sorry for the trouble!"
 
 if __name__ == '__main__':
-    print('Welcome to Jarvis A.I')
-    say("Jarvis A.I")
+    print('Welcome to Balki')
+    say("Balki A.I")
     while True:
         print("Listening...")
         query = takeCommand()
@@ -83,25 +83,23 @@ if __name__ == '__main__':
                 webbrowser.open(site[1])
         # todo: Add a feature to play a specific song
         if "open music" in query:
-            musicPath = "/Users/harry/Downloads/downfall-21371.mp3"
+            musicPath = "C:\Users\tejes\OneDrive\Desktop\Folder\Tejeshwar\JAVA\Sngs"
             os.system(f"open {musicPath}")
 
         elif "the time" in query:
-            musicPath = "/Users/harry/Downloads/downfall-21371.mp3"
+            musicPath = "C:\Users\tejes\OneDrive\Desktop\Folder\Tejeshwar\JAVA\Sngs\Arctic Monkeys - Do I Wanna Know_ (Official Video).mp3"
             hour = datetime.datetime.now().strftime("%H")
             min = datetime.datetime.now().strftime("%M")
             say(f"Sir time is {hour} bajke {min} minutes")
 
-        elif "open facetime".lower() in query.lower():
-            os.system(f"open /System/Applications/FaceTime.app")
 
         elif "open pass".lower() in query.lower():
             os.system(f"open /Applications/Passky.app")
 
-        elif "Using artificial intelligence".lower() in query.lower():
+        elif "Using ai".lower() in query.lower():
             ai(prompt=query)
 
-        elif "Jarvis Quit".lower() in query.lower():
+        elif "Balki Quit".lower() in query.lower():
             exit()
 
         elif "reset chat".lower() in query.lower():
